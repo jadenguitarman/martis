@@ -1,0 +1,19 @@
+{
+	"ERROR_CONTACTS": [
+		"7174240772@txt.att.net",
+		"jbaptista@eds.tech"
+	],
+	"DATABASES": {
+		"mysql": {
+			"database": "eds_gizmo",
+			"host": "localhost",
+			"user": "eds_gizmo",
+			"password": "2$4wDja6",
+			"package": "mysql"
+		}
+	},
+	"ON_ROOT": {
+		"command": "redirect",
+		"destination": "https://eds.tech/"
+	}
+}

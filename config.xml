@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config><!-- put everything in this config tag -->
+	<!--
+		When an error occurs (other than a 404) an email is sent to these addresses.
+		You can also set up text messages this way by emailing number@service-provider. See https://lifehacker.com/how-can-i-send-an-email-via-text-message-5506326
+		For each email address, add an ERROR_CONTACTS tag
+	-->
+	<ERROR_CONTACTS>8675309@txt.att.net</ERROR_CONTACTS>
+	<ERROR_CONTACTS>send_me_errors@example.com</ERROR_CONTACTS>
+
+	<DATABASES>
+		<!--
+			This is an object mapping database names to their properties.
+			For example, the following database will be called "mysql" using the mysql package (as opposed to "pdo"), so you'll be able to reference it by that name in the code. It'll be set up with a connection string built out of the values of the object.
+		-->
+		<mysql>
+			<database>db_name</database>
+			<host>localhost</host>
+			<user>db_user</user>
+			<password>this_is_a_password</password>
+			<package>pdo</package>
+		</mysql>
+	</DATABASES>
+
+	<ON_ROOT>
+		<!--
+			this is what to do when we get a ping on the root path, for example, someone visiting https://www.example.com/
+			the "command" key is always set to either "redirect" or "simulate_path".
+			If "command" is set to "redirect", then you must include a "destination" key whose value is where the user should be redirected.
+			If "command" is set to "simulate_path", then the framework will make the root path an alias of the "path" you set. Slashes will be stripped from the ends of this path. The framework will automatically keep the GET parameters from the root path request and add the GET paramters on the "path" you set. To clear the GET parameters from the root path request, set "clear_get" to true.
+		-->
+		<command>redirect</command>
+		<destination>https://eds.tech</destination>
+	</ON_ROOT>
+</config>

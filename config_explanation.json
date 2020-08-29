@@ -1,0 +1,26 @@
+{
+	"ERROR_CONTACTS": [
+		//This is an array of emails that get a message whenever there's an error other than a 404. This is mostly 500 Internal Server Errors.
+		//You can also set up text messages this way by emailing number@service-provider. See https://lifehacker.com/how-can-i-send-an-email-via-text-message-5506326
+	],
+	"DATABASES": {
+		//This is an object mapping database names to their properties.
+		//For example, the following database will be called "mysql" using the mysql package (as opposed to "pdo"), so you'll be able to reference it by that name in the code. It'll be set up with a connection string built out of the values of the object.
+		"mysql": {
+			"database": "company_database_name",
+			"host": "localhost",
+			"user": "company_database_user",
+			"password": "i_am_a_password",
+			"package": "mysql"
+		}
+	},
+	"ON_ROOT": {
+		//this is what to do when we get a ping on the root path, for example, someone visiting https://www.example.com/
+		//the "command" key is always set to either "redirect" or "simulate_path".
+		//If "command" is set to "redirect", then you must include a "destination" key whose value is where the user should be redirected.
+		//If "command" is set to "simulate_path", then the framework will make the root path an alias of the "path" you set. Slashes will be stripped from the ends of this path. The framework will automatically keep the GET parameters from the root path request and add the GET paramters on the "path" you set. To clear the GET parameters from the root path request, set "clear_get" to true.
+		"command": "simulate_path",
+		"path": "/main/home/?user=1234",
+		"clear_get": true
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"ERROR_CONTACTS": [
+		"8675309@txt.att.net",
+		"send_me_errors@example.com"
+	],
+	"DATABASES": {
+		"mysql": {
+			"database": "db_name",
+			"host": "localhost",
+			"user": "db_user",
+			"password": "this_is_a_password",
+			"package": "pdo"
+		}
+	},
+	"ON_ROOT": {
+		"command": "redirect",
+		"destination": "https://eds.tech/"
+	}
+}
